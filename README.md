@@ -16,7 +16,8 @@
 4. Curta o evento sem preocupações!  
 
 ## 📲 Tecnologias Utilizadas  
-
+- **C#**
+- **.NET 8** 
 - **.NET MAUI** – Para uma experiência fluida em dispositivos móveis.  
 - **XAML** – Interface moderna e responsiva.  
 
