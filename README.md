@@ -13,7 +13,12 @@
 1. Crie um evento e adicione seus amigos.  
 2. Defina os itens necessários para o evento.  
 3. Divida os custos entre os participantes de forma justa.  
-4. Curta o evento sem preocupações!  
+4. Curta o evento sem preocupações!
+
+
+<img src="https://github.com/user-attachments/assets/820b3acb-c76e-4163-aba3-9c498b56784f" width="300"/>
+<img src="https://github.com/user-attachments/assets/8b14732d-fa3d-4f42-84e0-d4809b52efb2" width="300"/>
+
 
 ## 📲 Tecnologias Utilizadas  
 - **C#**
