@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Barbecut.Pages.Event.Components"
+             x:Class="Barbecut.Pages.Event.Steps.AddPeopleEvent">
+    <VerticalStackLayout
+    Padding="30"
+    Spacing="5">
+        <Label Text="Name" />
+        <Border Style="{StaticResource InputBorder}">
+            <StackLayout Orientation="Horizontal" >
+                <Entry x:Name="NewName" Style="{StaticResource Input}"  Placeholder="Name new people"/>
+            </StackLayout>
+        </Border>
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="What´s going to consume?" />
+                <Button
+                        Style="{DynamicResource ConsumeButton}"
+                        x:Name="ConsumeButton"
+                        Text="0 items selected"
+                        Clicked="ConsumeButton_Clicked"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+            <FlexLayout  JustifyContent="Center" AlignItems="Center" MinimumWidthRequest="100" MinimumHeightRequest="90">
+                <Button x:Name="AddPeopleButton" Clicked="AddPeopleButton_Clicked" Style="{DynamicResource CircularButton}" Text="+" />
+            </FlexLayout>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Spacing="20">
+            <Label Text="People" />
+            <ScrollView HeightRequest="300">
+                <VerticalStackLayout Spacing="10">
+                    <CollectionView x:Name="CollectionViewItem">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <views:PersonCard _editPersonEvent="PersonCard_editPersonEvent" _removePersonEvent="PersonCard_removePersonEvent"  _rowText="{Binding Row}" _nameText="{Binding Name}" _consumeItemCountText="{Binding ConsumeItemCount}" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentView>

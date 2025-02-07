@@ -1,0 +1,13 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Barbecut.Pages.Event.Steps.WhoBoughtEvent">
+    <VerticalStackLayout Spacing="20">
+        <VerticalStackLayout HeightRequest="30" />
+        <ScrollView HeightRequest="500">
+            <VerticalStackLayout Spacing="10">
+                <StackLayout x:Name="CardsContainer" Spacing="10">
+                </StackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentView>

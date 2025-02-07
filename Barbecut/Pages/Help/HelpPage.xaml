@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Barbecut.Pages.HelpPage"
+             Title="HelpPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout  Grid.Row="0" Padding="20,50" Spacing="10">
+            <FlexLayout Direction="Row" Margin="10,30" AlignItems="Center">
+                <Image HeightRequest="40" WidthRequest="40" Source="fire.svg" />
+                <Label Margin="5,0" Text="BARBECUT" FontSize="20" FontAttributes="Bold"/>
+            </FlexLayout>
+
+            <Label x:Name="TitleHelp" Text="Welcome to Barbecut!" Style="{DynamicResource TitleHelp}"/>
+            <Label Text="Plan and enjoy your event gatherings with friends. Easily share costs and organize the perfect party."
+                       HorizontalOptions="FillAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start" />
+
+            <Label Padding="0,20" Text="Here´s how it works:"/>
+            <VerticalStackLayout Spacing="40">
+                <HorizontalStackLayout Spacing="10">
+                    <Image HeightRequest="35" Source="calendar.svg"/>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Create Events" FontAttributes="Bold"/>
+                        <Label FontSize="12" FontAttributes="Italic" Text="Plan events and invite your friends to join."/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Image HeightRequest="40" Source="coins.svg"/>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Share Costs" FontAttributes="Bold"/>
+                        <Label FontSize="12" FontAttributes="Italic" Text="Divide expenses fairly among all participants."/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Image HeightRequest="40" Source="shopping.svg"/>
+                    <VerticalStackLayout Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Manage Shopping Lists" FontAttributes="Bold"/>
+                        <Label FontSize="12" FontAttributes="Italic" Text="Keep track of what´s needed and calculate price."/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1" Padding="0,50" >
+            <Button 
+            Text="Let´s get started"
+            Style="{DynamicResource MediumButton}"
+            WidthRequest="300"
+            Clicked="Button_Clicked"
+            VerticalOptions="End"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

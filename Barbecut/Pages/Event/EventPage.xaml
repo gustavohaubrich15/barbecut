@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:eventSteps="clr-namespace:Barbecut.Pages.Event.Steps"
+             x:Class="Barbecut.Pages.Events.EventPage"
+             Title="EventPage">
+    <ScrollView>
+        <VerticalStackLayout>
+            <FlexLayout Direction="Row"  Margin="10,30" AlignItems="Center">
+                <Image HeightRequest="40" WidthRequest="40" Source="fire.svg" />
+                <Label
+                    Margin="5,0"
+                    Text="BARBECUT"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
+            </FlexLayout>
+            <FlexLayout Padding="50,0" Direction="Row" JustifyContent="Center">
+                <VerticalStackLayout>
+                    <Border x:Name="BorderStepOneProgress" Style="{DynamicResource ActiveProgressEventBorderWithIcon}">
+                        <Label
+                            x:Name="LabelStepOneProgress"
+                            Text="✔"
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                            TextColor="White" 
+                            FontAttributes="Bold"/>
+                    </Border>
+                </VerticalStackLayout>
+                <ProgressBar x:Name="StepOneProgressBar"  VerticalOptions="Center"/>
+                <VerticalStackLayout>
+                    <Border x:Name="BorderStepTwoProgress" Style="{DynamicResource ActiveProgressEventBorderWithIcon}">
+                        <Label 
+                        Text="2"
+                        x:Name="LabelStepTwoProgress"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center" 
+                        TextColor="White" 
+                        FontAttributes="Bold"/>
+                    </Border>
+                </VerticalStackLayout>
+                <ProgressBar x:Name="StepTwoProgressBar"  VerticalOptions="Center"/>
+                <VerticalStackLayout>
+                    <Border x:Name="BorderStepThreeProgress" Style="{DynamicResource DisableProgressEventBorderWithIcon}">
+                        <Label 
+                        Text="3"
+                        x:Name="LabelStepThreeProgress"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center" 
+                        TextColor="White" 
+                        FontAttributes="Bold"/>
+                    </Border>
+                </VerticalStackLayout>
+                <ProgressBar x:Name="StepThreeProgressBar" VerticalOptions="Center"/>
+                <VerticalStackLayout>
+                    <Border x:Name="BorderStepFourProgress" Style="{DynamicResource DisableProgressEventBorderWithIcon}">
+                        <Label 
+                            Text="4"
+                            x:Name="LabelStepFourProgress"
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                            TextColor="White" 
+                            FontAttributes="Bold"/>
+                    </Border>
+                </VerticalStackLayout>
+                <ProgressBar x:Name="StepFourProgressBar" VerticalOptions="Center"/>
+                <VerticalStackLayout>
+                    <Border x:Name="BorderStepFiveProgress" Style="{DynamicResource DisableProgressEventBorderWithIcon}">
+                        <Label 
+                            Text="5"
+                            x:Name="LabelStepFiveProgress"
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center" 
+                            TextColor="White" 
+                            FontAttributes="Bold"/>
+                    </Border>
+                </VerticalStackLayout>
+            </FlexLayout>
+            <Label 
+                x:Name="TitleEventStep"
+                Text="Basic Information"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                Style="{DynamicResource TitleEventStep}"/>
+            <eventSteps:BasicInformationEvent x:Name="BasicInformationEventView" IsVisible="True"/>
+            <eventSteps:FoodAndDrinksEvent x:Name="FoodAndDrinksEventView" IsVisible="False"/>
+            <eventSteps:AddPeopleEvent x:Name="AddPeopleEventView" IsVisible="False"/>
+            <eventSteps:WhoBoughtEvent x:Name="WhoBoughtView" IsVisible="False"/>
+            <eventSteps:DoneEvent x:Name="DoneEventView" IsVisible="False"/>
+            <FlexLayout x:Name="StepsButtonsLayout" Opacity="0" Direction="Row" JustifyContent="SpaceAround"  HeightRequest="70">
+                <Button
+                    Style="{DynamicResource MediumButton}"
+                    x:Name="StepsButtonsLayoutReturn"
+                    Opacity="0"
+                    Text="Return"
+                    Clicked="StepsButtonsLayoutReturn_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Button
+                    Style="{DynamicResource MediumButton}"
+                    x:Name="StepsButtonsLayoutBackStep"
+                    Opacity="0"
+                    Text="Back step"
+                    Clicked="StepsButtonsLayoutBackStep_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Button
+                    Style="{DynamicResource MediumButton}"
+                    x:Name="StepsButtonsLayoutNextStep"
+                    Opacity="0"
+                    Text="Next step"
+                    Clicked="StepsButtonsLayoutNextStep_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </FlexLayout>
+            <FlexLayout x:Name="SummaryAndEndButtonsLayout" Opacity="0"  Direction="Row" JustifyContent="SpaceAround" HeightRequest="70">
+                <Button
+                    Style="{DynamicResource SmallButton}"
+                    Text="Back step"
+                    x:Name="SummaryAndEndButtonsLayoutBackStep"
+                    Clicked="SummaryAndEndButtonsLayoutBackStep_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Button
+                    Style="{DynamicResource SmallButton}"
+                    Text="Share in WhatsApp"
+                    FontSize="12"
+                    x:Name="SummaryAndEndButtonsLayoutWhatsApp"
+                    Clicked="SummaryAndEndButtonsLayoutWhatsApp_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Button
+                    Style="{DynamicResource SmallButton}"
+                    x:Name="SummaryAndEndButtonsLayoutFinish"
+                    Clicked="SummaryAndEndButtonsLayoutFinish_Clicked"
+                    Text="Finish"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

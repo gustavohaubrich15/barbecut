@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Barbecut.Pages.Event.Components.PersonCard">
+    <VerticalStackLayout Padding="0,8">
+        <Border
+     Style="{DynamicResource BorderCard}">
+            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" >
+                <Image Source="person.svg" />
+                <Label
+                     IsVisible="False"
+                     x:Name="Row" 
+                     FontSize="18"
+                     FontAttributes="Bold"
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center" />
+                <VerticalStackLayout>
+                    <Label
+                         x:Name="Name"
+                         FontSize="16"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center"
+                         LineBreakMode="TailTruncation"
+                         MaximumWidthRequest="150"    />
+                </VerticalStackLayout>
+                <Label
+                     x:Name="ConsumeItemCount"
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center" />
+                <ImageButton
+                     x:Name="EditPerson"
+                     Clicked="EditPerson_Clicked"
+                     Source="edit.svg"/>
+                <ImageButton
+                     x:Name="DeletePerson"
+                     Clicked="DeletePerson_Clicked"
+                     Source="trash.svg"/>
+            </FlexLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentView>

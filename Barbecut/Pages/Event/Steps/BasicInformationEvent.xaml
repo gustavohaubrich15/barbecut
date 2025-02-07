@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             x:Class="Barbecut.Pages.Event.Steps.BasicInformationEvent">
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="25">
+        <Border Style="{StaticResource InputBorderWithIcon}">
+            <StackLayout Orientation="Horizontal" >
+                <Image Source="grill.svg" />
+                <Entry x:Name="Name" TextChanged="Name_TextChanged" Placeholder="Event name" Style="{StaticResource Input}" />
+            </StackLayout>
+        </Border>
+        <Border Style="{StaticResource InputBorderWithIcon}">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="info.svg" />
+                <Entry x:Name="Description" TextChanged="Description_TextChanged" Placeholder="Description" Style="{StaticResource Input}" />
+            </StackLayout>
+        </Border>
+        <FlexLayout Direction="Row">
+            <Border  Style="{StaticResource InputBorderWithIcon}" Margin="0,0,10,0" >
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="calendar.svg" Margin="10,0,0,0" />
+                    <DatePicker x:Name="BorderDatePicker" DateSelected="BorderDatePicker_DateSelected" />
+                </StackLayout>
+            </Border>
+            <Border Style="{StaticResource InputBorderWithIcon}">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="clock.svg" />
+                    <TimePicker x:Name="BorderTimePicker" PropertyChanged="BorderTimePicker_PropertyChanged" />
+                </StackLayout>
+            </Border>
+        </FlexLayout>
+        <Border Style="{StaticResource InputBorderWithIcon}">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="map.svg" />
+                <Entry x:Name="Location" TextChanged="Location_TextChanged" Placeholder="Event location" Style="{StaticResource Input}" />
+            </StackLayout>
+        </Border>
+        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" HeightRequest="210">
+        </FlexLayout>
+    </VerticalStackLayout>
+
+</ContentView>

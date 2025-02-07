@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Barbecut.Pages.Event.Components"
+             x:Class="Barbecut.Pages.Event.Steps.FoodAndDrinksEvent">
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="5">
+        <Label Text="Item" />
+        <Border Style="{StaticResource InputBorder}">
+                <StackLayout Orientation="Horizontal" >
+                <Entry x:Name="NewItemDescription" Style="{StaticResource Input}"  Placeholder="Description new item"/>
+                </StackLayout>
+         </Border>
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Price" />
+                <Border Style="{StaticResource InputBorder}">
+                    <StackLayout Orientation="Horizontal" >
+                        <Entry MaximumWidthRequest="62" x:Name="NewItemPrice" Completed="NewItemPrice_Completed" Placeholder="R$ 00,00" Keyboard="Numeric" Style="{StaticResource Input}" />
+                    </StackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="10,0">
+                <Label Text="Units" />
+                <Border Style="{StaticResource InputBorder}">
+                    <StackLayout Orientation="Horizontal" >
+                        <Entry x:Name="NewItemUnits" Placeholder="0" MaximumWidthRequest="35" WidthRequest="35" Keyboard="Numeric" Style="{StaticResource Input}" />
+                    </StackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <FlexLayout  JustifyContent="Center" AlignItems="Center" MinimumWidthRequest="100" MinimumHeightRequest="90">
+                <Button x:Name="AddItemButton" Clicked="AddItemButton_Clicked" Style="{DynamicResource CircularButton}" Text="+" />
+            </FlexLayout>
+        </HorizontalStackLayout>
+        <VerticalStackLayout Spacing="20">
+            <Label Text="All items" />
+            <ScrollView HeightRequest="300">
+                <VerticalStackLayout Spacing="10">
+                    <CollectionView x:Name="CollectionViewItem">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <views:ItemCard _removeItemEvent="ItemCard_RemoveItemEvent"  _rowText="{Binding Row}" _descriptionText="{Binding Description}" _priceText="{Binding Price}" _unitText="{Binding Units}" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentView>

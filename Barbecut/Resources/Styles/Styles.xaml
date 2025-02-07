@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="Button" x:Key="MediumButton">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontFamily" Value="InterRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="WidthRequest" Value="100"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="BigButton">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontFamily" Value="InterRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HeightRequest" Value="90"/>
+        <Setter Property="WidthRequest" Value="120"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="SmallButton">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontFamily" Value="InterRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="WidthRequest" Value="100"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="NotSelected">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource ButtonDisabledText}" />
+                            <Setter Property="BackgroundColor" Value="{DynamicResource ButtonDisabledColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="CircularButton">
+        <Setter Property="TextColor" Value="{DynamicResource WhiteColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontFamily" Value="InterRegular"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="CornerRadius" Value="25"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="WidthRequest" Value="50"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ConsumeButton">
+        <Setter Property="TextColor" Value="{DynamicResource QuaternaryColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+        <Setter Property="FontFamily" Value="InterRegular"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="Margin" Value="0,2" />
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="WidthRequest" Value="200"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="Input">
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="InterRegular"/>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource QuaternaryColor}" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="HeightRequest" Value="50"/>
+
+    </Style>
+
+    <Style TargetType="Border" x:Key="InputBorder">
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
+        <Setter Property="Padding" Value="30,0" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="InputBorderWithIcon">
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
+        <Setter Property="Padding" Value="10,0" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="ActiveProgressEventBorderWithIcon">
+        <Setter Property="StrokeShape" Value="RoundRectangle 30,30,30,30"/>
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Stroke" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Padding" Value="5,8" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="DisableProgressEventBorderWithIcon">
+        <Setter Property="StrokeShape" Value="RoundRectangle 30,30,30,30"/>
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="Stroke" Value="{DynamicResource QuaternaryColor}" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource QuaternaryColor}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Padding" Value="5,8" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="BorderCard">
+        <Setter Property="StrokeShape" Value="RoundRectangle 20,20,20,20"/>
+        <Setter Property="HeightRequest" Value="80" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+        <Setter Property="Padding" Value="20,0" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="BorderInfo">
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
+        <Setter Property="WidthRequest" Value="180" />
+        <Setter Property="HeightRequest" Value="120" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+
+    <Style TargetType="TimePicker" >
+        <Setter Property="FontFamily" Value="InterRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="10,0"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+        <Setter Property="HeightRequest" Value="50"/>
+    </Style>
+
+    <Style TargetType="DatePicker" >
+        <Setter Property="FontFamily" Value="InterRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="10,0"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource TertiaryColor}" />
+        <Setter Property="HeightRequest" Value="50"/>
+    </Style>
+
+    <Style TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="Start" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="InterRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="5,2" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource QuaternaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="TitleEventStep">
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="InterRegular" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource QuaternaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="TitleHelp">
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="InterRegular" />
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource QuaternaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Label" x:Key="TitleFilter">
+        <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontFamily" Value="InterRegular" />
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{DynamicResource QuaternaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ProgressBar">
+        <Setter Property="ProgressColor" Value="{DynamicResource PrimaryColor}"/>
+    </Style>
+
+    <Style TargetType="CheckBox">
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Color"
+                                Value="{DynamicResource PrimaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="IsChecked">
+                        <VisualState.Setters>
+                            <Setter Property="Color"
+                                Value="{DynamicResource PrimaryColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Picker">
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    
+</ResourceDictionary>

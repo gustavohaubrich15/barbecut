@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Barbecut.Pages.Home.Components"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Barbecut.Pages.Home.HomePage"
+             Title="HomePage">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="White" StatusBarStyle="DarkContent" />
+    </ContentPage.Behaviors>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="Auto,*,Auto" Margin="10,30" VerticalOptions="Center">
+                <Image Grid.Column="0" HeightRequest="40" WidthRequest="40" Source="fire.svg" />
+                <Label 
+                Grid.Column="1" 
+                Margin="5,0" 
+                Text="BARBECUT" 
+                FontSize="20" 
+                FontAttributes="Bold" 
+                VerticalOptions="Center" />
+
+                <Button
+                    x:Name="HelpButton"
+                    Clicked="HelpButton_Clicked"
+                    Grid.Column="2"
+                    WidthRequest="80"
+                    Style="{DynamicResource SmallButton}" 
+                    Text="Help" 
+                    HorizontalOptions="End" />
+            </Grid>
+            <FlexLayout Direction="Row" Margin="30,20">
+                <Button 
+                x:Name="NewEvent"
+                Style="{DynamicResource BigButton}"  
+                Text="New Event  "
+                Clicked="NewEvent_Clicked"/>
+            </FlexLayout>
+            <VerticalStackLayout 
+                Padding="30,15"
+                Spacing="25"
+                HorizontalOptions="StartAndExpand">
+                <HorizontalStackLayout>
+                    <Border Style="{StaticResource InputBorderWithIcon}"  WidthRequest="360">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="search.svg" />
+                            <Entry x:Name="FindEvent" Completed="FindEvent_Completed" Placeholder="Find your event" Style="{StaticResource Input}" />
+                        </StackLayout>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Button x:Name="AllButtonFilter" Clicked="AllButtonFilter_Clicked" Style="{DynamicResource SmallButton}" Text="All" />
+                    <Button x:Name="ActiveButtonFilter" Clicked="ActiveButtonFilter_Clicked" Style="{DynamicResource SmallButton}" Text="Active" />
+                    <Button x:Name="FinishedButtonFilter" Clicked="FinishedButtonFilter_Clicked" Style="{DynamicResource SmallButton}" Text="Finished" />
+                </HorizontalStackLayout>
+                <Label x:Name="FilterTitle" Style="{DynamicResource TitleFilter}" Text="Active events" />
+                <VerticalStackLayout Spacing="10">
+                    <CollectionView
+                                x:Name="CollectionViewEvent">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <views:EventCard _shareCostsEvent="EventCard_shareCostsEvent" _editEvent="EventCard_editEvent" _removeEvent="EventCard_removeEvent" _idText="{Binding IdEvent}" _nameText="{Binding Name}" _statusText="{Binding Status}" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Button x:Name="LoadMoreButton"
+                            IsVisible="False"
+                            Style="{DynamicResource SmallButton}"
+                            Text="Ver Mais"
+                            Clicked="LoadMoreButton_Clicked"
+                            HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <Picker HeightRequest="0" WidthRequest="0" x:Name="ShareCostsPicker"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

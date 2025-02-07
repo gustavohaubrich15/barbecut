@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Barbecut.Pages.Event.Components.ConsumeListPage"
+             Title="ConsumeListPage">
+    <VerticalStackLayout>
+        <FlexLayout Direction="Row"  Margin="10,30" AlignItems="Center">
+            <Image HeightRequest="40" WidthRequest="40" Source="fire.svg" />
+            <Label
+                Margin="5,0"
+                Text="BARBECUT"
+                FontSize="20"
+                FontAttributes="Bold"/>
+        </FlexLayout>
+        <FlexLayout Padding="50,0" Direction="Column">
+            <VerticalStackLayout
+                    Padding="30"
+                    Spacing="25">
+                <Label 
+                Text="What´s going to consume?" />
+                <ScrollView HeightRequest="600">
+                    <VerticalStackLayout Spacing="10">
+                        <CollectionView x:Name="CollectionViewCheckBoxItem">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Style="{DynamicResource InputBorder}" Margin="0,5">
+                                        <FlexLayout Direction="Row" HeightRequest="80" AlignItems="Center">
+                                            <CheckBox x:Name="CheckBox" IsChecked="{Binding IsChecked}"  CheckedChanged="CheckBox_CheckedChanged" />
+                                            <Label Text="{Binding Description}"/>
+                                        </FlexLayout>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </ScrollView>
+                <Button
+                Style="{DynamicResource MediumButton}"
+                x:Name="OkButton"
+                Text="Ok"
+                Clicked="OkButton_Clicked"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </FlexLayout>
+    </VerticalStackLayout>
+</ContentPage>

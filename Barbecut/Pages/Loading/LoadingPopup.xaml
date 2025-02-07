@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="Barbecut.Pages.Loading.LoadingPopup"
+             Color="Transparent"
+             CanBeDismissedByTappingOutsideOfPopup="False">
+    <Border Style="{DynamicResource InputBorder}">
+        <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Center" WidthRequest="100" HeightRequest="100">
+
+            <ActivityIndicator IsRunning="True" 
+                           Color="{DynamicResource PrimaryColor}"/>
+
+            <Label Text="Loading..." 
+               FontSize="14" 
+               FontAttributes="Bold" />
+        </FlexLayout>
+    </Border>
+</toolkit:Popup>
