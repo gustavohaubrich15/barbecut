@@ -17,8 +17,7 @@
 
 
 <img src="https://github.com/user-attachments/assets/820b3acb-c76e-4163-aba3-9c498b56784f" width="300"/>
-<img src="https://github.com/user-attachments/assets/8b14732d-fa3d-4f42-84e0-d4809b52efb2" width="300"/>
-
+<img src="https://github.com/user-attachments/assets/f42c2d13-7cdb-4b8a-99d5-c989d2958428" width="300"/>
 
 ## 📲 Tecnologias Utilizadas  
 - **C#**
